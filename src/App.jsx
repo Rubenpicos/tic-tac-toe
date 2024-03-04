@@ -1,14 +1,14 @@
 import React, { useCallback, useState } from "react";
-import confetti from "canvas-confetti"
+import confetti from "canvas-confetti";
 const TURNS = {
-  X: '🦕', 
-  O: '🐬'
+  X: "🦕",
+  O: "🐬",
 };
 
 const board = Array(9).fill(null);
 
 const Square = ({ children, isSelected, updateBoard, index }) => {
-  const className = `square ${isSelected ? 'is-selected' : ''}`;
+  const className = `square ${isSelected ? "is-selected" : ""}`;
   const handleClick = () => {
     updateBoard(index);
   };
@@ -28,7 +28,7 @@ const WINNER_COMBOS = [
   [1, 4, 7],
   [2, 5, 8],
   [0, 4, 8],
-  [2, 4, 6]
+  [2, 4, 6],
 ];
 
 function App() {
@@ -60,8 +60,8 @@ function App() {
     //revisamos si hay empate
     //si hay más espacios vacios
     // en el tablero
-    return newBoard.every((square) => square !== null)
-  }
+    return newBoard.every((square) => square !== null);
+  };
 
   const updateBoard = (index) => {
     if (board[index] || winner) return;
@@ -76,10 +76,9 @@ function App() {
     const newWinner = checkWinner(newBoard);
     if (newWinner) {
       setWinner(newWinner);
-      confetti()
-    } else if(checkEndGame(newBoard)){
-      setWinner(false)
-
+      confetti();
+    } else if (checkEndGame(newBoard)) {
+      setWinner(false);
     }
   };
 
@@ -104,9 +103,7 @@ function App() {
         {winner !== null && (
           <section className="winner">
             <div>
-              <h2>
-                {winner === false ? 'Empate' : 'Ganó: '}
-              </h2>
+              <h2>{winner === false ? "Empate" : "Ganó: "}</h2>
 
               <header className="win">
                 {winner && <Square>{winner}</Square>}
