@@ -6,7 +6,7 @@ To play it you just have to download the project and access its folder from your
 
 ---
 
-Este es un proyecto del famoso juego del tic-tac-toe. Aquí podrás jugar con amigos de manera local y en vex de los típicos X e O tendrás delfines y dinosaurios.
+Este es un proyecto del famoso juego del tic-tac-toe. Aquí podrás jugar con amigos de manera local y en vez de los típicos X e O tendrás delfines y dinosaurios.
 
 Estña hecho con HTML, CSS Y REACT.
 
