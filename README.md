@@ -1,20 +1,13 @@
-# Tic-Tac-Toe with Dinosaurs and Dolphins
+This is a project of the famous tic-tac-toe game. Here you can play with friends locally and instead of the typical X and O you will have dolphins and dinosaurs.
 
-This is a simple Tic-Tac-Toe game implemented in React. Instead of the typical X and O, it uses dinosaur and dolphin tokens to add a fun and unique touch to the game.
+It is made with HTML, CSS AND REACT.
 
-## Features
+To play it you just have to download the project and access its folder from your terminal and use the npm run dev command.
 
-- Local multiplayer game: play against a friend on the same device.
-- Themed tokens: use dinosaurs and dolphins instead of X and O.
-- Simple interface: the game runs in a web browser without the need for on-screen instructions.
 
-## How to Play
+---
+Este es un proyecto del famoso juego del tic-tac-toe. Aquí podrás jugar con amigos de manera local y en vex de los típicos X e O tendrás delfines y dinosaurios. 
 
-1. Clone this repository to your local machine.
-2. Open a terminal and navigate to the game directory.
-3. Install dependencies using `npm install`.
-4. Start the development server with `npm start`.
-5. Open your browser and go to `http://localhost:3000`.
-6. Follow the instructions to make your moves.
+Estña hecho con HTML, CSS Y REACT. 
 
-Enjoy the game with your favorite dinosaurs and dolphins in your web browser!
+Para jugarlo unicamente tienes que descargar el proyecto y acceder a la carpeta del mismo desde tu terminal y usar el comando npm run dev. 
