@@ -5,8 +5,6 @@ const TURNS = {
   O: "🐬",
 };
 
-const board = Array(9).fill(null);
-
 const Square = ({ children, isSelected, updateBoard, index }) => {
   const className = `square ${isSelected ? "is-selected" : ""}`;
   const handleClick = () => {
@@ -30,12 +28,12 @@ const WINNER_COMBOS = [
   [0, 4, 8],
   [2, 4, 6],
 ];
-
+// Function to start the game, know whose turn it is and if there is a winner. Funcion para empezar el jue, saber de quien es el turno y si hay algún ganador.
 function App() {
   const [board, setBoard] = useState(Array(9).fill(null));
   const [turn, setTurn] = useState(TURNS.X);
   const [winner, setWinner] = useState(null);
-
+  // For know the winner// Para conocer el ganador.
   const checkWinner = (boardToCheck) => {
     for (const combo of WINNER_COMBOS) {
       const [a, b, c] = combo;
@@ -49,17 +47,14 @@ function App() {
     }
     return null;
   };
-
+  // Function to reset the game// Función para resetear el juego.
   const resetGame = () => {
     setBoard(Array(9).fill(null));
     setTurn(TURNS.X);
     setWinner(null);
   };
-
+  //With this we see if it has been a tie or if there are gaps on the scoreboard// Con esto miramos si ha sido empate o si hay huecos en el tablero.
   const checkEndGame = (newBoard) => {
-    //revisamos si hay empate
-    //si hay más espacios vacios
-    // en el tablero
     return newBoard.every((square) => square !== null);
   };
 
@@ -69,10 +64,10 @@ function App() {
     const newBoard = [...board];
     newBoard[index] = turn;
     setBoard(newBoard);
-
+    // To change the turn // Para cambiar el turno.
     const newTurn = turn === TURNS.X ? TURNS.O : TURNS.X;
     setTurn(newTurn);
-
+    // For continues the game if there is no winner// Para continuar el juego si no hay ganador
     const newWinner = checkWinner(newBoard);
     if (newWinner) {
       setWinner(newWinner);
@@ -85,7 +80,7 @@ function App() {
   return (
     <main className="board">
       <h1>Tic-Tac-Toe</h1>
-      <button onClick={resetGame}>Reset del juego</button>
+      <button onClick={resetGame}>Restart the game </button>
       <section className="game">
         {board.map((value, index) => (
           <Square key={index} index={index} updateBoard={updateBoard}>
@@ -103,14 +98,14 @@ function App() {
         {winner !== null && (
           <section className="winner">
             <div>
-              <h2>{winner === false ? "Empate" : "Ganó: "}</h2>
+              <h2>{winner === false ? "Tie" : "Winner: "}</h2>
 
               <header className="win">
                 {winner && <Square>{winner}</Square>}
               </header>
 
               <footer>
-                <button onClick={resetGame}>Empezar de nuevo</button>
+                <button onClick={resetGame}>Start again</button>
               </footer>
             </div>
           </section>
